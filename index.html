@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山形 絶景・名湯・美食を巡る夏旅 旅のしおり</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .tab-active {
+            border-bottom: 3px solid #0284c7;
+            color: #0284c7;
+            font-weight: 700;
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            bottom: 0;
+            left: 20px;
+            width: 3px;
+            background-color: #e5e7eb;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 pb-16">
+
+    <!-- ヘッダー / メインビジュアル -->
+    <header class="relative bg-gradient-to-r from-emerald-700 via-teal-600 to-sky-700 text-white shadow-lg">
+        <div class="max-w-3xl mx-auto px-4 py-8 sm:px-6 sm:py-10">
+            <div class="inline-block bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase mb-2">
+                <i class="fa-solid fa-arrows-rotate mr-1"></i> 電車運休対応・蔵王先行プラン
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">山形 絶景・名湯・美食フォト旅</h1>
+            <p class="text-emerald-100 text-xs sm:text-sm mt-1">
+                <i class="fa-regular fa-calendar-check mr-1"></i> 2026.08.19 (水) - 08.20 (木)
+            </p>
+            
+            <!-- フライトクイックサマリー -->
+            <div class="mt-6 grid grid-cols-2 gap-3 text-slate-800 text-xs">
+                <div class="bg-white/95 backdrop-blur rounded-xl p-3 shadow-md border border-white/50">
+                    <div class="text-xs font-bold text-sky-700 mb-1 flex items-center">
+                        <i class="fa-solid fa-plane-arrival mr-1.5"></i> 行き (JAL175)
+                    </div>
+                    <div class="font-bold text-slate-800">07:20 羽田 → 08:15 山形</div>
+                </div>
+                <div class="bg-white/95 backdrop-blur rounded-xl p-3 shadow-md border border-white/50">
+                    <div class="text-xs font-bold text-emerald-700 mb-1 flex items-center">
+                        <i class="fa-solid fa-plane-departure mr-1.5"></i> 帰り (JAL178)
+                    </div>
+                    <div class="font-bold text-slate-800">19:10 山形 → 20:15 羽田</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ナビゲーション タブ -->
+    <div class="sticky top-0 bg-white shadow-md z-40 border-b border-slate-200">
+        <div class="max-w-3xl mx-auto flex justify-around text-sm">
+            <button onclick="switchTab('day1')" id="tab-day1" class="tab-btn tab-active py-3.5 px-4 font-medium flex items-center gap-1.5 transition-colors">
+                <i class="fa-solid fa-cable-car text-emerald-600"></i> Day 1 (8/19 蔵王)
+            </button>
+            <button onclick="switchTab('day2')" id="tab-day2" class="tab-btn py-3.5 px-4 font-medium flex items-center gap-1.5 text-slate-500 hover:text-emerald-600 transition-colors">
+                <i class="fa-solid fa-mountain text-sky-600"></i> Day 2 (8/20 山寺)
+            </button>
+            <button onclick="switchTab('memo')" id="tab-memo" class="tab-btn py-3.5 px-4 font-medium flex items-center gap-1.5 text-slate-500 hover:text-emerald-600 transition-colors">
+                <i class="fa-solid fa-clipboard-check text-amber-600"></i> 持ち物・メモ
+            </button>
+        </div>
+    </div>
+
+    <!-- コンテンツエリア -->
+    <main class="max-w-3xl mx-auto px-4 py-6">
+
+        <!-- ================= Day 1 タブ (蔵王先行) ================= -->
+        <div id="content-day1" class="tab-content space-y-4">
+            <div class="bg-emerald-50 border-l-4 border-emerald-500 p-3.5 rounded-r-lg text-xs text-emerald-900 shadow-sm flex items-start gap-2">
+                <i class="fa-solid fa-circle-info text-emerald-500 mt-0.5 text-sm"></i>
+                <div>
+                    <strong>1日目の変更ポイント：</strong> 仙山線の運休を回避し、バスで即座に「蔵王エリア」へ！涼しい高山で撮影＆名湯露天風呂を満喫し、夕方はサウナで整います。
+                </div>
+            </div>
+
+            <div class="relative timeline-line space-y-6">
+
+                <!-- スケジュール項目 -->
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-sky-600 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-plane"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-sky-100 text-sky-800 rounded">07:20 - 08:15</span>
+                            <span class="text-xs text-slate-500">JAL175</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800">羽田空港 → 山形空港</h3>
+                        <p class="text-xs text-slate-600 mt-1">到着後、08:25発の空港シャトルバスで山形駅前へ移動（09:00着）。</p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-slate-600 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-hotel"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-slate-100 text-slate-700 rounded">09:10 - 10:00</span>
+                            <span class="text-xs text-slate-500">山形駅西口</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800">ホテル荷物預け ＆ 蔵王バス乗車準備</h3>
+                        <p class="text-xs text-slate-600 mt-1">スーパーホテルへ荷物を預け、東口1番バス乗り場へ移動。山交バス「蔵王温泉行き」に乗車。</p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded">10:20 - 11:05</span>
+                            <span class="text-xs text-slate-500">山交バス</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800">山形駅前 → 蔵王温泉バスターミナル</h3>
+                        <p class="text-xs text-slate-600 mt-1">路線バスで約45分。標高の高い爽やかな蔵王温泉エリアへ一直線！</p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-cable-car"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-teal-200 bg-teal-50/30 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-teal-100 text-teal-800 rounded">11:15 - 13:00</span>
+                            <span class="text-xs text-teal-700 font-semibold"><i class="fa-solid fa-camera"></i> 絶景フォト</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-base">蔵王ロープウェイ ＆ 山頂パノラマ撮影</h3>
+                        <ul class="text-xs text-slate-600 mt-2 space-y-1 list-disc list-inside">
+                            <li>蔵王山麓駅 → 樹氷高原駅 → 地蔵山頂駅（標高1,661m）へ空中散歩。</li>
+                            <li>涼しい風が吹き抜ける高山エリアで、Galaxy S24 Ultraの望遠・広角でダイナミックな風景を撮影！</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-cyan-600 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-cyan-100 text-cyan-800 rounded">13:00 - 15:00</span>
+                            <span class="text-xs text-slate-500">温泉＆ランチ</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800">蔵王温泉 大露天風呂 ＆ 温泉街昼食</h3>
+                        <p class="text-xs text-slate-600 mt-1">源泉掛け流しの強力な強酸性硫黄泉で癒やされ、温泉街でジンギスカンや山形そばを堪能。15:20発のバスで山形駅へ戻ります。</p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-hot-tub-person"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-teal-200 bg-teal-50/20 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-teal-100 text-teal-800 rounded">16:15 - 18:30</span>
+                            <span class="text-xs text-teal-700 font-semibold">リフレッシュ</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800">チェックイン ＆ 市街地サウナ整い</h3>
+                        <p class="text-xs text-slate-600 mt-1">16:05に山形駅到着後、ホテルへチェックイン。その後「スーパー銭湯テルメ」や「SOLENA」へ向かい、サウナメガネを装着してサウナでじっくり整います！</p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-slate-700 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-slate-100 text-slate-700 rounded">19:00 -</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800">市街地で夕食（麺藤田のつけ麺 / 栄屋本店）</h3>
+                        <p class="text-xs text-slate-600 mt-1">駅前周辺で遅めの夕食に「麺藤田」のつけ麺などを味わい、明日の山寺登山に備えて就寝。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= Day 2 タブ (山寺＆帰路) ================= -->
+        <div id="content-day2" class="tab-content space-y-4 hidden">
+            <div class="bg-sky-50 border-l-4 border-sky-500 p-3.5 rounded-r-lg text-xs text-sky-900 shadow-sm flex items-start gap-2">
+                <i class="fa-solid fa-circle-info text-sky-500 mt-0.5 text-sm"></i>
+                <div>
+                    <strong>2日目のポイント：</strong> 午前中は運休が解消した仙山線で山寺へ！午後は<strong>【20時チェックアウト特権】</strong>で自室シャワー＆快適パッキング後に空港へ向かいます。
+                </div>
+            </div>
+
+            <div class="relative timeline-line space-y-6">
+
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-train"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-indigo-100 text-indigo-800 rounded">08:42 - 09:02</span>
+                            <span class="text-xs text-slate-500">JR仙山線</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800">山形駅 → 山寺駅</h3>
+                        <p class="text-xs text-slate-600 mt-1">朝一番の爽やかな空気の中、電車で約20分。山寺エリアへアクセス。</p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-amber-200 bg-amber-50/30 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-amber-100 text-amber-800 rounded">09:10 - 11:40</span>
+                            <span class="text-xs font-semibold text-amber-700"><i class="fa-solid fa-star"></i> メイン撮影</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-base">宝珠山 立石寺（山寺）1,000段登攀＆絶景撮影</h3>
+                        <ul class="text-xs text-slate-600 mt-2 space-y-1 list-disc list-inside">
+                            <li>空調服・水冷ベストを装備して1,000段の階段を登攀。</li>
+                            <li><strong>五大堂からの絶景：</strong> Galaxy S24 Ultraの200MP・超広角カメラで大迫力撮影！</li>
+                            <li>12:17発（または11:40発）の電車で山形駅へ。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-rose-600 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-rose-100 text-rose-800 rounded">12:40 - 13:40</span>
+                            <span class="text-xs text-slate-500">市街地ランチ</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800">「栄屋本店」冷やしラーメン 昼食</h3>
+                        <p class="text-xs text-slate-600 mt-1">登山の汗を流した後は、名物冷やしラーメンで最高の一杯を味わう。</p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-sky-600 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-person-biking"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-sky-100 text-sky-800 rounded">14:00 - 15:45</span>
+                            <span class="text-xs text-slate-500">市街地ポタリング</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800">シェアサイクル散策 ＆ S-PALお土産</h3>
+                        <p class="text-xs text-slate-600 mt-1">HELLO CYCLINGで霞城公園や七日町御殿堰を周遊。S-PAL山形で限定お土産を購入しそのまま部屋へ持ち帰り。</p>
+                    </div>
+                </div>
+
+                <!-- ベースキャンプハイライト -->
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0 shadow ring-4 ring-purple-100">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-4 rounded-xl shadow-md border border-purple-200 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2.5 py-0.5 bg-purple-600 text-white rounded-full">15:45 - 16:50</span>
+                            <span class="text-xs text-purple-700 font-bold"><i class="fa-solid fa-key"></i> レイトC/O適用</span>
+                        </div>
+                        <h3 class="font-bold text-purple-900 text-base">【ベースキャンプ活用】シャワー＆最終パッキング</h3>
+                        <ul class="text-xs text-purple-900 mt-2 space-y-1 list-disc list-inside">
+                            <li>山寺＆ポタリングの汗を部屋のシャワーで完全に流す！</li>
+                            <li>エアコンの効いた室内で清潔な服に着替え。</li>
+                            <li>お土産、スマホ充電、冷却ギアを落ち着いてパッキング。</li>
+                            <li>16:50にチェックアウトしてすぐ目の前のバスターミナルへ。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-sky-600 text-white flex items-center justify-center shrink-0 shadow">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold px-2 py-0.5 bg-sky-100 text-sky-800 rounded">17:00 - 20:15</span>
+                            <span class="text-xs text-slate-500">JAL178</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800">山形空港 → 羽田空港（帰路）</h3>
+                        <p class="text-xs text-slate-600 mt-1">17:00発シャトルバスで空港へ（17:35着）。19:10発のフライトまで1時間半以上ゆとりがあるため、空港内で最後までゆったり過ごせます。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= 持ち物・メモ タブ ================= -->
+        <div id="content-memo" class="tab-content space-y-4 hidden">
+            
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                <h3 class="font-bold text-slate-800 border-b border-slate-100 pb-2 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-sky-600"></i> 持ち物チェックリスト
+                </h3>
+                
+                <div class="space-y-4 text-xs">
+                    <div>
+                        <div class="font-bold text-slate-700 mb-2 bg-slate-100 p-1.5 rounded">📱 ガジェット・撮影</div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pl-2">
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-sky-600 focus:ring-sky-500"> Galaxy S24 Ultra</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-sky-600 focus:ring-sky-500"> 急速充電器 ＆ USB-Cケーブル</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-sky-600 focus:ring-sky-500"> 大容量モバイルバッテリー</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="font-bold text-slate-700 mb-2 bg-slate-100 p-1.5 rounded">❄️ 真夏酷暑・冷却ギア</div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pl-2">
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-sky-600 focus:ring-sky-500"> 空調服 / 水冷ベスト</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-sky-600 focus:ring-sky-500"> 冷却ギア用予備バッテリー</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-sky-600 focus:ring-sky-500"> 汗拭きシート・タオル</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="font-bold text-slate-700 mb-2 bg-slate-100 p-1.5 rounded">♨️ サウナ・温浴グッズ</div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pl-2">
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-sky-600 focus:ring-sky-500"> サウナ専用メガネ</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-sky-600 focus:ring-sky-500"> 着替え・下着類</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 space-y-3">
+                <h3 class="font-bold text-slate-800 border-b border-slate-100 pb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-lightbulb text-amber-500"></i> トラブル対応・ワンポイントメモ
+                </h3>
+
+                <div class="text-xs space-y-2 text-slate-600">
+                    <div class="p-2.5 bg-emerald-50 rounded-lg border border-emerald-200 text-emerald-900">
+                        <strong>蔵王バス乗り場（1日目）：</strong> 山形駅東口の1番乗り場から発車します（約45分 / 1,000円）。
+                    </div>
+                    <div class="p-2.5 bg-purple-50 rounded-lg border border-purple-200 text-purple-900">
+                        <strong>20時チェックアウト活用：</strong> 最終日の部屋退室は16:50でOK！17:00発の空港シャトルバスに直結できます。
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="text-center text-xs text-slate-400 py-6">
+        Have a flexible and wonderful trip to Yamagata! 📸♨️
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('text-slate-500');
+            });
+
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+            const activeTab = document.getElementById('tab-' + tabId);
+            activeTab.classList.add('tab-active');
+            activeTab.classList.remove('text-slate-500');
+        }
+    </script>
+</body>
+</html>
